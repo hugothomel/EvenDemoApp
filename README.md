@@ -37,13 +37,20 @@ The core steps are as follows:
 
 
 ## Instructions
-G1’s dual Bluetooth communication is unique, each arm corresponds to a separate BLE 
-connection. During communication, unless the protocol specifies sending data to only one 
-side (e.g., microphone activation to the right), the app should: 
-- First send data to the left side. 
-- Then send data to the right side after receiving a successful acknowledgment from the left. 
- Also, consider the glasses' display width limitation: during the Even AI function, the 
+G1’s dual Bluetooth communication is unique, each arm corresponds to a separate BLE
+connection. During communication, unless the protocol specifies sending data to only one
+side (e.g., microphone activation to the right), the app should:
+- First send data to the left side.
+- Then send data to the right side after receiving a successful acknowledgment from the left.
+ Also, consider the glasses' display width limitation: during the Even AI function, the
 maximum width is 488 pixels, with eac
+
+## watchOS Support
+This repo now contains a minimal watchOS target located under `ios/watchos`.
+The watch app reuses the Bluetooth manager so you can pair EvenReality glasses
+directly with an Apple Watch. Open the `EvenWatchApp` target in Xcode and run it
+on a watchOS device or simulator. Use the provided buttons to scan, connect and
+disconnect from your glasses.
 
 
 
